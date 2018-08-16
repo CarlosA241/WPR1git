@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Strain Game NYC",
-    "currentPage": "index.html",
+    "currentPage": "page2.html",
     "theme": {
       "name": "portfoliom4",
       "title": "PortfolioM4",
@@ -33,7 +33,7 @@
     "path": "@PROJECT_PATH@",
     "siteFonts": [],
     "versionFirst": "4.7.7",
-    "uniqCompNum": 57,
+    "uniqCompNum": 60,
     "versionPublish": "4.7.7",
     "favicon": "",
     "noImageResize": "",
@@ -1273,6 +1273,39 @@
         },
         {
           "_styles": {
+            "& when (@fullWidth = false)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "background": "@bgColor",
+            "& when (@gradientBg)": {
+              "background": "linear-gradient(45deg, @bgColor, @color2)"
+            },
+            ".video-block": {
+              "margin": "auto",
+              "& when (@fullWidth)": {
+                "width": "100% !important"
+              }
+            },
+            "@media (max-width: 768px)": {
+              ".video-block": {
+                "width": "100% !important"
+              }
+            }
+          },
+          "_name": "video1",
+          "_customHTML": "<section group=\"Images & Videos\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"4\" step=\"1\" condition=\"fullWidth==false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"4\" step=\"1\" condition=\"fullWidth==false\">\n    <input type=\"range\" inline title=\"Width\" name=\"videoSize\" min=\"20\" max=\"100\" value=\"66\" step=\"1\" condition=\"fullWidth==false\">\n\n    <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\" condition=\"fullWidth==false\">\n    <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"fullWidth==false\">\n    <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#b2ccd2\" condition=\"gradientBg\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    \n    <figure class=\"mbr-figure align-center\" mbr-class=\"{'container':fullWidth==false}\">\n        <div class=\"video-block\" mbr-style=\"{'width':videoSize+'%'}\">\n            <div mbr-video>\n                <iframe src=\"https://vimeo.com/285192586?loop=0&autoplay=0\"></iframe>\n            </div>\n        </div>\n    </figure>\n</section>",
+          "_anchor": "video1-1l",
+          "_isUserblock": true,
+          "_sourceTheme": "portfoliom4",
+          "_cid": "r0Q9aLWM2L",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
             ".mbr-section-title": {
               "color": "#ffffff",
               "span": {
@@ -1356,7 +1389,7 @@
             }
           },
           "_name": "header3",
-          "_customHTML": "<section group=\"Headers header2\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Scroll Bg\" name=\"scrollBg\" checked>\n        <input type=\"range\" title=\"Scroll Time\" name=\"scrollTime\" min=\"1\" max=\"60\" step=\"1\" value=\"30\" condition=\"scrollBg && bg.type == 'image'\" inline> \n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/img-8797-2000x2667.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#dddddd\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"scroll-wrapper\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"scroll-wrapper second\" mbr-if=\"scrollBg\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container text-center block-content\" data-stellar-background-ratio=\".5\">\n      <div class=\"row justify-content-center slider-wrapper\" mbr-if=\"showTitle || showSubtitle\">\n        <div class=\"col-md-10\">\n          <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Farmer's Market</h2>\n          <h4 class=\"mbr-text mbr-fonts-style align-center mbr-bold\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">From the Seed to the People</h4><h4>\n        </h4></div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down block-content\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_customHTML": "<section group=\"Headers header2\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Scroll Bg\" name=\"scrollBg\" checked>\n        <input type=\"range\" title=\"Scroll Time\" name=\"scrollTime\" min=\"1\" max=\"60\" step=\"1\" value=\"30\" condition=\"scrollBg && bg.type == 'image'\" inline> \n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/img-8797-2000x2667.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#dddddd\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"scroll-wrapper\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"scroll-wrapper second\" mbr-if=\"scrollBg\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container text-center block-content\" data-stellar-background-ratio=\".5\">\n      <div class=\"row justify-content-center slider-wrapper\" mbr-if=\"showTitle || showSubtitle\">\n        <div class=\"col-md-10\">\n          <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">Macro Buds</h2>\n          <h4 class=\"mbr-text mbr-fonts-style align-center mbr-bold\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\">A Look at Your Cannabis<br>(Sherbert pictured)</h4><h4>\n        </h4></div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down block-content\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_cid": "qYLYdNjlcz",
           "_anchor": "header3-d",
           "_protectedParams": [],
@@ -2012,6 +2045,84 @@
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
+            ".card-title": {
+              "letter-spacing": "0.03em",
+              "color": "#232323",
+              "margin": "0",
+              "padding": "0",
+              "& when not (@showCardUnderline)": {
+                "padding-bottom": "1.5rem"
+              }
+            },
+            ".card": {
+              "margin-bottom": "2rem"
+            },
+            ".card-box": {
+              "word-break": "break-word",
+              "padding-top": "2rem",
+              "p": {
+                "color": "#444",
+                "letter-spacing": "0.03em",
+                "margin": "0",
+                "padding-bottom": "1.5rem"
+              }
+            },
+            ".btn": {
+              "margin": ".3rem"
+            },
+            ".mbr-section-title": {
+              "margin": "0"
+            },
+            ".card-underline,.underline": {
+              "margin-top": "-0.5rem",
+              "margin-bottom": "-0.5rem",
+              ".line": {
+                "width": "3rem",
+                "height": "2px",
+                "background": "@underlineColor",
+                "display": "inline-block"
+              }
+            },
+            ".card-underline": {
+              "margin-bottom": "1.5rem",
+              "margin-top": "0 !important",
+              ".line": {
+                "background": "@cardUnderlineColor"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".row.blog-block": {
+                "padding": "0 1rem"
+              }
+            },
+            "@media screen and (~'-ms-high-contrast: active'), (~'-ms-high-contrast: none')": {
+              ".row-content": {
+                "min-width": "100%"
+              },
+              ".card": {
+                "display": "block"
+              }
+            }
+          },
+          "_name": "features8",
+          "_customHTML": "<section class=\"features8\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Main Title\" name=\"showMaintitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showMaintitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#444444\" condition=\"showMaintitle && showMaintitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Card Underline\" name=\"showCardUnderline\" condition=\"showTitle\" checked>\n        <input type=\"color\" title=\"Card Underline Color\" name=\"cardUnderlineColor\" value=\"#ffbc00\" condition=\"showMaintitle && showTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <select title=\"Cards\" name=\"cardsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row blog-block\">\n            <div class=\"col-md-12\">\n              <h2 class=\"mbr-section-title mbr-fonts-style align-center\" mbr-theme-style=\"display-2\" mbr-if=\"showMaintitle\" data-app-selector=\".mbr-section-title,.underline\">\n                  NY STRAIN GAME&nbsp;</h2>\n               <div class=\"underline align-center\" mbr-if=\"showUnderline && showMaintitle\">\n                   <div class=\"line\"></div>\n               </div>\n              <h3 class=\"mbr-section-subtitle mbr-light mbr-fonts-style pt-3 align-center\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\" mbr-if=\"showSubtitle\">\n                  NYC CANNABIS NEWS DAILY</h3>\n            </div>\n\n            <div class=\"row row-content justify-content-center\">\n                <div class=\"card py-3 col-12 col-md-6\" mbr-class=\"{'col-lg-4': cardsAmount == '3'|| cardsAmount =='5'|| cardsAmount== '6'}\">\n                    <div class=\"card-wrapper\">\n                        <div class=\"card-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/3819490228-84e20e289c-b-720x540.jpg\" title alt>\n                        </div>\n                        <div class=\"card-box\">\n                            <h4 class=\"card-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title,.card-underline\">\n                                NYC NEW POLICY ON POT</h4>\n                           <div class=\"card-underline align-center\" mbr-if=\"showCardUnderline && showTitle\">\n                               <div class=\"line\"></div>\n                           </div>\n                            <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-box > p, .mbr-section-btn\"><br>The Manhattan district attorney’s new policy not to prosecute low-level marijuana cases goes into effect Wednesday — and is part of a broader city trend toward decriminalization.</p>\n                              \n                        </div>\n                        <div mbr-buttons mbr-if=\"showButtons\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\">\n                             <a href=\"https://mobirise.com\" class=\"btn btn-primary\">READ MORE</a>\n                        </div>  \n                    </div>\n                </div>\n            \n                <div class=\"card py-3 col-12 col-md-6\" mbr-if=\"cardsAmount > 1\" mbr-class=\"{'col-lg-4': cardsAmount == '3'|| cardsAmount =='5'|| cardsAmount== '6'}\">\n                    <div class=\"card-wrapper\">\n                        <div class=\"card-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/action-bronson-arrested-smoking-weed-onstage-kosovo-featured-560x600.jpg\" title alt>\n                        </div>\n                        <div class=\"card-box\">\n                            <h4 class=\"card-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title,.card-underline\">ACTION BRONSON ARRESTED</h4>\n                           <div class=\"card-underline align-center\" mbr-if=\"showCardUnderline && showTitle\">\n                               <div class=\"line\"></div>\n                           </div>\n                            <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-box > p, .mbr-section-btn\">Queens rapper Action wished he was in the Big Apple this past weekend, when he was arrested halfway around the world in Kosovo for weed possession.<br><br></p>\n                        </div>\n                        <div mbr-buttons mbr-if=\"showButtons\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\">\n                             <a href=\"https://mobirise.com\" class=\"btn btn-primary\">READ MORE</a>\n                        </div>  \n                    </div>\n                </div>\n            \n                <div class=\"card py-3 col-12 col-md-6\" mbr-if=\"cardsAmount > 2\" mbr-class=\"{'col-lg-4': cardsAmount == '3'|| cardsAmount =='5'|| cardsAmount== '6'}\">\n                    <div class=\"card-wrapper\">\n                        <div class=\"card-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/muwgndujtiha7zoo7upktiziri-720x479.jpg\" title alt>\n                        </div>\n                        <div class=\"card-box\"> \n                            <h4 class=\"card-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title,.card-underline\">\n                               LEGAL WEED IN NYC SOON?</h4>\n                           <div class=\"card-underline align-center\" mbr-if=\"showCardUnderline && showTitle\">\n                               <div class=\"line\"></div>\n                           </div>\n                            <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-box > p, .mbr-section-btn\">\n                                Legal pot will come to New York, cannabis industry experts predict, noting the economic benefits to states and cities. Indeed, it is inevitable, they add, because, as neighboring states approve...\n                            </p>\n                        </div>\n                        <div mbr-buttons mbr-if=\"showButtons\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\">\n                            <a href=\"https://mobirise.com\" class=\"btn btn-primary\">READ MORE</a>\n                        </div>  \n                    </div>\n                </div>\n            \n                <div class=\"card py-3 col-12 col-md-6\" mbr-if=\"cardsAmount > 3\" mbr-class=\"{'col-lg-4': cardsAmount == '3'|| cardsAmount =='5'|| cardsAmount== '6'}\">\n                    <div class=\"card-wrapper\">\n                        <div class=\"card-img\">\n                            <img src=\"../_images/img/01.jpg\" title>\n                        </div>\n                        <div class=\"card-box\">\n                            <h4 class=\"card-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title,.card-underline\">\n                               Why I Like It\n                            </h4>\n                           <div class=\"card-underline align-center\" mbr-if=\"showCardUnderline && showTitle\">\n                               <div class=\"line\"></div>\n                           </div>\n                            <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-box > p, .mbr-section-btn\">\n                                Lorem ipsum dolor sit amet, consectetur elit. Nulla convallis pulvinar vestibulum. Donec eleifend, sem sed dictum mattis, turpis purus.\n                            </p>\n                             \n                        </div>\n                        <div mbr-buttons mbr-if=\"showButtons\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\">\n                              <a href=\"https://mobirise.com\" class=\"btn btn-primary\">READ MORE</a>\n                        </div>  \n                    </div>\n                </div>\n                <div class=\"card py-3 col-12 col-md-6\" mbr-class=\"{'col-lg-4': cardsAmount == '3'|| cardsAmount =='5'|| cardsAmount== '6'}\" mbr-if=\"cardsAmount>4\">\n                    <div class=\"card-wrapper\">\n                        <div class=\"card-img\">\n                            <img src=\"../_images/img/02.jpg\" title>\n                        </div>\n                        <div class=\"card-box\">\n                            <h4 class=\"card-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title,.card-underline\">\n                                Design In Web\n                            </h4>\n                           <div class=\"card-underline align-center\" mbr-if=\"showCardUnderline && showTitle\">\n                               <div class=\"line\"></div>\n                           </div>\n                            <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-box > p, .mbr-section-btn\">\n                                Lorem ipsum dolor sit amet, consectetur elit. Nulla convallis pulvinar vestibulum. Donec eleifend, sem sed dictum mattis, turpis purus. \n                            </p>\n                        </div>\n                        <div mbr-buttons mbr-if=\"showButtons\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\">\n                             <a href=\"https://mobirise.com\" class=\"btn btn-primary\">READ MORE</a>\n                        </div> \n                    </div>\n                </div>\n            \n                <div class=\"card py-3 col-12 col-md-6\" mbr-if=\"cardsAmount > 5\" mbr-class=\"{'col-lg-4': cardsAmount == '3'|| cardsAmount =='5'|| cardsAmount== '6'}\">\n                    <div class=\"card-wrapper\">\n                        <div class=\"card-img\">\n                            <img src=\"../_images/img/03.jpg\" title>\n                        </div>\n                        <div class=\"card-box\">\n                            <h4 class=\"card-title mbr-fonts-style mbr-bold align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".card-title,.card-underline\">\n                               Good Photo\n                            </h4>\n                           <div class=\"card-underline align-center\" mbr-if=\"showCardUnderline && showTitle\">\n                               <div class=\"line\"></div>\n                           </div>\n                            <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".card-box > p, .mbr-section-btn\">\n                                Lorem ipsum dolor sit amet, consectetur elit. Nulla convallis pulvinar vestibulum. Donec eleifend, sem sed dictum mattis, turpis purus.\n                            </p>\n                        </div>\n                        <div mbr-buttons mbr-if=\"showButtons\" mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-center\">\n                            <a href=\"https://mobirise.com\" class=\"btn btn-primary\">READ MORE</a>\n                        </div> \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "r0QedhUlY6",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "features8-1n"
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
             ".text": {
               "letter-spacing": "0.03em",
               "line-height": "1.7"
@@ -2167,7 +2278,7 @@
             }
           },
           "_name": "header4",
-          "_customHTML": "<section class=\"header4\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\"> \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>       \n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/screen-shot-2018-08-01-at-4.47.34-am-2000x1250.png\" selected parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"rgb(7,9,21)\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n   <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div> \n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\" col-md-10 content\">\n                <h1 class=\"mbr-section-title mbr-light pb-3 mbr-white mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Can you get arrested in NYC for cannabis?</h1>\n                <p class=\"mbr-text mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    We at Strain Game NYC pride ourselves in sharing the most up to date knowledge on cannibis strains in the New York City area. &nbsp;As more states take steps towards legalization, we are encouraged that we will be able to educate more people on the cannibis products they are purchasing.</p>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-arrow-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"header4\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"9\" condition=\"fullScreen == false\"> \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>       \n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/img-9116-2000x1500.jpg\" selected parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"rgb(7,9,21)\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n   <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div> \n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\" col-md-10 content\">\n                <h1 class=\"mbr-section-title mbr-light pb-3 mbr-white mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Their Eyes Are Watching You</h1>\n                <p class=\"mbr-text mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    NYC Strain Game's recent ride on the G train noticed this. &nbsp;So gone are the days that Redman rapped about, \"Getting blunted on the train.\" &nbsp;Be careful out there Strain Game nation.</p>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-arrow-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_isUserblock": true,
           "_sourceTheme": "portfoliom4",
           "_cid": "qZIF59rXm0",
@@ -2181,263 +2292,39 @@
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-slider .carousel-control": {
-              "background": "#1b1b1b"
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
             },
-            ".mbr-slider .carousel-control-prev": {
-              "left": "0",
-              "margin-left": "2.5rem"
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
             },
-            ".mbr-slider .carousel-control-next": {
-              "right": "0",
-              "margin-right": "2.5rem"
+            ".text": {
+              "letter-spacing": "0.03em",
+              "line-height": "1.7"
             },
-            ".mbr-slider .modal-body .close": {
-              "background": "#1b1b1b"
-            },
-            ".mbr-gallery-item > div::before": {
-              "content": "''",
-              "position": "absolute",
-              "left": "0",
-              "top": "0",
+            ".mbr-text": {
               "width": "100%",
-              "height": "100%",
-              "background": "@overlayColor",
-              "& when (@gradOverlay)": {
-                "background": "linear-gradient(to left, @overlayColor, @overlayColor2) !important"
-              },
-              "opacity": "0",
-              "-webkit-transition": "0.2s opacity ease-in-out",
-              "transition": "0.2s opacity ease-in-out"
+              "height": "auto"
             },
-            ".mbr-gallery-item > div:hover::before": {
-              "opacity": "@overlayOpacity !important"
-            },
-            ".mbr-gallery-filter-all > a": {
-              "padding": "30px",
-              "color": "@tagsColor !important"
-            },
-            ".mbr-gallery-filter": {
-              "padding-top": "0",
-              "padding-bottom": "2rem",
-              ".btn": {
-                "text-transform": "uppercase",
-                "color": "@tagsColor !important",
-                "font-weight": "400",
-                "letter-spacing": "0.1em",
-                "margin": "0px !important",
-                "border": "none",
-                "padding": "12px 15px 12px 15px"
-              },
-              ".btn:hover": {
-                "background": "transparent",
-                "color": "@activeTagColor !important"
-              },
-              "ul": {
-                "display": "block",
-                "li": {
-                  "position": "relative"
-                }
-              },
-              "li.active .btn": {
-                "color": "@activeTagColor !important",
-                "background": "transparent"
-              },
-              "li::after": {
-                "bottom": "0.5rem",
-                "content": "\"\"",
-                "height": "4px",
-                "left": "50%",
-                "position": "absolute",
-                "transform": "translateX(-50%) scale(0)",
-                "width": "4px",
-                "transition": "all 0.3s ease-in-out",
-                "background": "@activeTagColor !important"
-              },
-              "li.active::after, li:hover::after": {
-                "transform": "translateX(-50%) scale(1)",
-                "background": "@activeTagColor !important"
-              }
-            },
-            ".mbr-gallery-title": {
-              "transition": "all.3s",
-              "position": "absolute",
-              "visibility": "hidden",
-              "display": "block",
-              "opacity": "0",
-              "width": "100%",
-              "top": "-2rem",
-              "right": "0",
-              "text-align": "right",
-              "padding": "1rem",
-              "color": "#fff",
-              "background": "transparent"
-            },
-            ".mbr-gallery-item > div:hover": {
-              ".mbr-gallery-title": {
-                "top": "0",
-                "right": "0",
-                "display": "block",
-                "visibility": "visible",
-                "opacity": "1"
-              },
-              ".icon-focus": {
-                "top": "calc(~'50% - 24px')"
-              }
-            },
-            ".icon-focus:before": {
-              "content": "'\\e95e'"
-            },
-            ".icon-focus": {
-              "transition": "all .3s",
-              "font-size": "2rem !important",
-              "top": "50%",
-              "left": "calc(~'50% - 24px')",
-              "width": "48px",
-              "padding": "0 8px",
-              "border-radius": "50%",
-              "color": "#444444 !important",
-              "background-color": "#ffffff"
-            },
-            ".mbr-section-title": {
-              "margin": "0"
-            },
-            ".underline": {
-              "margin-top": "-0.5rem",
-              "margin-bottom": "-0.5rem",
-              ".line": {
-                "width": "3rem",
-                "height": "2px",
-                "background": "@underlineColor",
-                "display": "inline-block"
-              }
-            }
-          },
-          "_name": "gallery3",
-          "_customHTML": "<section class=\"mbr-gallery mbr-slider-carousel\" group=\"Sliders & Gallery\" plugins=\"Masonry,Slider,BootstrapCarouselSwipe,Gallery,VimeoVideo\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" inline>\n        <input type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" inline>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showTitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#232323\" condition=\"showUnderline && showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"color\" title=\"Tags Color\" name=\"tagsColor\" value=\"#444444\">\n        <input type=\"color\" title=\"Active Tag Color\" name=\"activeTagColor\" value=\"#ffbc00\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\">\n        <input type=\"checkbox\" title=\"Gradient Overlay\" name=\"gradOverlay\">\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"overlayColor2\" value=\"#ffffff\" condition=\"gradOverlay\">\n        <input type=\"range\" title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" inline>\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n        <input type=\"gallery\" title=\"Gallery\" name=\"gallery\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-sm-10\">\n                <h2 class=\"mbr-section-title mbr-fonts-styl align-center\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title,.underline\">\n                    STRAINS FOR THE BRAIN</h2>\n                <div class=\"underline align-center\" mbr-if=\"showUnderline && showTitle\">\n                    <div class=\"line\"></div>\n                </div>\n                <h3 class=\"mbr-section-subtitle mbr-light mbr-fonts-style pt-3 align-center\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\" mbr-if=\"showSubtitle\">\n                    Gallery with text in top on hover. Use block parameters to off/on text, bullets and other\n                </h3>\n            </div>\n        </div>\n    </div>\n    \n    <div mbr-class=\"{'container': !fullWidth}\">\n        <div class=\"pt-5\" mbr-gallery=\"gallery\" mbr-gallery-spacing=\"1\" mbr-gallery-show-text></div>\n    </div>\n\n</section>",
-          "_cid": "qZIF59Olym",
-          "_anchor": "gallery3-r",
-          "_protectedParams": [
-            "text_all",
-            "gallery__filtersTextStyle",
-            "gallery__filtersBtnStyle",
-            "gallery"
-          ],
-          "_global": false,
-          "_once": false,
-          "_params": {
-            "text_all": "All",
-            "gallery__filtersTextStyle": "display-7",
-            "gallery__filtersBtnStyle": "btn-primary-outline",
-            "gallery": [
-              {
-                "tags": "Awesome",
-                "videoPreview": "@THEME_PATH@/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/100-best-strains-landseye-cinex-1350x1800.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/100-best-strains-landseye-cinex-1350x1800-800x1067.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "CINEX",
-                "active": false
-              },
-              {
-                "tags": "Responsive",
-                "videoPreview": "@THEME_PATH@/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/100-best-strains-landseye-blue-dream-1-1350x1800.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/100-best-strains-landseye-blue-dream-1-1350x1800-800x1067.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "BLUE DREAM",
-                "active": false
-              },
-              {
-                "tags": "Creative",
-                "videoPreview": "@THEME_PATH@/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@PROJECT_PATH@/assets/images/03182017-landseye-gojiog-002-web-1350x1800.jpg",
-                "thumb": "@PROJECT_PATH@/assets/images/03182017-landseye-gojiog-002-web-1350x1800-800x1067.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "GIRL SCOUT COOKIES",
-                "active": true
-              }
-            ]
-          }
-        },
-        {
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background": "@bgColor",
-            ".images-container.container-fluid": {
-              "padding": "0"
-            },
-            ".media-container-row": {
-              "margin": "0 auto",
-              "align-items": "center",
-              ".img-item": {
+            "@media (max-width: 991px)": {
+              ".row": {
                 "display": "flex",
                 "flex-direction": "column",
-                "justify-content": "center",
-                "position": "relative",
-                "width": "100%",
-                "z-index": "1",
-                "img": {
-                  "width": "100%"
-                },
-                ".img-caption": {
-                  "background": "@cpBg",
-                  "z-index": "2",
-                  "padding": "1rem 1rem",
-                  "word-break": "break-word",
-                  "position": "absolute",
-                  "left": "0",
-                  "bottom": "0",
-                  "right": "0",
-                  "p": {
-                    "margin-bottom": "0"
-                  }
-                },
-                "&.item1": {
-                  "padding": "0 2rem 0 0",
-                  ".img-caption": {
-                    "right": "2rem"
-                  }
-                }
+                "align-items": "center"
               },
-              "& when (@fullWidth)": {
-                "width": "100% !important"
-              }
-            },
-            "@media (max-width: 992px)": {
-              ".img-item": {
-                "width": "100% !important",
-                "&.item1": {
-                  "width": "100%",
-                  "flex-basis": "initial !important",
-                  "padding": "0 0 2rem 0 !important"
-                }
-              }
-            },
-            "@media screen and (~'-ms-high-contrast: active'), (~'-ms-high-contrast: none')": {
-              ".media-container-row .img-item": {
-                "flex-direction": "row"
+              ".content": {
+                "flex": "0 0 100%",
+                "max-width": "100%",
+                "margin-left": "0"
               }
             }
           },
-          "_name": "image1",
-          "_customHTML": "<section group=\"Images & Videos\">\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <mbr-parameters>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Width\" name=\"contentWidth\" min=\"66\" max=\"100\" value=\"66\" step=\"1\" condition=\"fullWidth==false\">\n        <input type=\"range\" inline title=\"Sizes\" name=\"proportions\" min=\"30\" max=\"300\" value=\"106\" step=\"1\">\n        <input type=\"checkbox\" title=\"Show Caption\" name=\"showCaption\" checked>\n        <input type=\"color\" title=\"Caption Background\" name=\"cpBg\" value=\"#00b15c\" condition=\"showCaption\">\n<!--         <input type=\"checkbox\" title=\"Caption On Top/Bottom\" name=\"captionBottom\" condition=\"showCaption\"> -->\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    </mbr-parameters>\n    <!-- End block parameters -->\n    <div class=\"container images-container\" mbr-class=\"{'container-fluid':fullWidth,container:fullWidth==false}\">\n            <div class=\"media-container-row\" mbr-style=\"{'width':contentWidth+'%'}\">\n                <div class=\"img-item item1\" mbr-style=\"{'width':proportions+'%'}\">\n                    <img src=\"@PROJECT_PATH@/assets/images/img-5625-964x723.jpg\" alt title>\n                    <div class=\"img-caption\" mbr-if=\"showCaption\">\n                        <p class=\"mbr-fonts-style align-left mbr-white mbr-bold\" mbr-theme-style=\"display-7\">\n                            PHOTOGRAPHER\n                        </p>\n                    </div>\n                </div>\n                <div class=\"img-item\">\n                    <img src=\"@PROJECT_PATH@/assets/images/img-7519-438x329.jpg\" alt title>\n                    <div class=\"img-caption\" mbr-if=\"showCaption\">\n                        <p class=\"mbr-fonts-style align-left mbr-white mbr-bold\" mbr-theme-style=\"display-7\">\n                            DEVELOPER\n                        </p>\n                    </div>\n                </div>\n            </div>\n    </div>\n</section>",
-          "_cid": "qZIF5asEib",
-          "_anchor": "image1-s",
+          "_name": "header4",
+          "_customHTML": "<section class=\"header4\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\"> \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>       \n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/170139110-1-2000x1334.jpg\" selected parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=l8UXhtqV6hU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"rgb(7,9,21)\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n   <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div> \n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\" col-md-10 content\">\n                <h1 class=\"mbr-section-title mbr-light pb-3 mbr-white mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Constellation Brands Inc. sees new future</h1>\n                <p class=\"mbr-text mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">In the biggest (legal) cannabis deal, the Victor, New York-based beverage company will spend about $3.8 billion to boost its stake in Canadian grower Canopy Growth Corp., betting legalization will gain traction around the world and especially in the U.S.</p>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-arrow-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_anchor": "header4-1m",
+          "_isUserblock": true,
+          "_sourceTheme": "portfoliom4",
+          "_cid": "r0QcaLJ89n",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -4698,11 +4585,11 @@
           "_name": "video1",
           "_customHTML": "<section group=\"Images & Videos\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"4\" step=\"1\" condition=\"fullWidth==false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"4\" step=\"1\" condition=\"fullWidth==false\">\n    <input type=\"range\" inline title=\"Width\" name=\"videoSize\" min=\"20\" max=\"100\" value=\"66\" step=\"1\" condition=\"fullWidth==false\">\n\n    <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\" condition=\"fullWidth==false\">\n    <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"fullWidth==false\">\n    <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#b2ccd2\" condition=\"gradientBg\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    \n    <figure class=\"mbr-figure align-center\" mbr-class=\"{'container':fullWidth==false}\">\n        <div class=\"video-block\" mbr-style=\"{'width':videoSize+'%'}\">\n            <div mbr-video>\n                <iframe src=\"https://youtu.be/7rg6ntxzl1A?loop=0&autoplay=0\"></iframe>\n            </div>\n        </div>\n    </figure>\n</section>",
           "_cid": "r0Hr1KRQJf",
+          "_anchor": "video1-1j",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "video1-1j"
+          "_params": {}
         },
         {
           "_styles": {
