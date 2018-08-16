@@ -3730,8 +3730,8 @@ body {
   display: inline-block;
 }
 .cid-r0bMBkvX3w {
-  padding-top: 45px;
-  padding-bottom: 45px;
+  padding-top: 75px;
+  padding-bottom: 0px;
   background: #ffffff;
 }
 .cid-r0bMBkvX3w .images-container.container-fluid {
@@ -3740,6 +3740,7 @@ body {
 .cid-r0bMBkvX3w .media-container-row {
   margin: 0 auto;
   align-items: center;
+  width: 100% !important;
 }
 .cid-r0bMBkvX3w .media-container-row .img-item {
   display: flex;
