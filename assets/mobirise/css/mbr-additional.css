@@ -3740,7 +3740,6 @@ body {
 .cid-r0bMBkvX3w .media-container-row {
   margin: 0 auto;
   align-items: center;
-  width: 100% !important;
 }
 .cid-r0bMBkvX3w .media-container-row .img-item {
   display: flex;
@@ -3788,11 +3787,13 @@ body {
   }
 }
 .cid-r0bMBkQu47 {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background: #ffffff;
+  background: linear-gradient(45deg, #ffffff, #62d89f);
 }
 .cid-r0bMBkQu47 .video-block {
   margin: auto;
-  width: 100% !important;
 }
 @media (max-width: 768px) {
   .cid-r0bMBkQu47 .video-block {
